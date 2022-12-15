@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTER</title>
+    <style>
+    form{
+    border:1px solid black;
+    border-collapse:collapse;
+    font-size:200%;
+    padding:50px;
+        text-align:center;
+        background-color: grey;
+
+
+
+
+
+    }
+
+</style>
+</head>
+<body>
+<div>
+<form action="register" method="post">
+
+     {% csrf_token %}
+
+    <input type="text" name="username" placeholder="enter username"><br>
+    <input type="text" name="first_name" placeholder="enter firstname"><br>
+    <input type="text" name="last_name" placeholder="enter lastname"><br>
+    <input type="email" name="email" placeholder="enter email"><br>
+    <input type="password" name="password" placeholder="enter password"><br>
+    <input type="password" name="password1" placeholder="confirm password"><br>
+    <input type="submit">
+</form>
+   <img class="w-100" src="{% static 'img/carousel-1.jpg' %}" alt="Image">
+</div>
+{% for i in messages %}
+<h1 style="color:red">{{i}}</h1>
+{% endfor %}
+</body>
+</html>
